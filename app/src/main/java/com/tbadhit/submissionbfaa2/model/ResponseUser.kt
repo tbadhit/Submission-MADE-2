@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class ResponseUser(
 
+    @field:SerializedName("id")
+    val id: Int = 0,
+
     @field:SerializedName("login")
     val username: String? = null,
 

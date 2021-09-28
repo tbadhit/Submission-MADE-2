@@ -5,4 +5,17 @@
         android:id="@+id/action_change_settings"
         android:title="@string/change_language_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/theme_mode"
+        android:icon="@drawable/ic_dark_mode"
+        android:title="@string/theme_mode"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/favorite"
+        android:icon="@drawable/ic_favorite_white"
+        android:title="@string/favorite"
+        app:showAsAction="collapseActionView|ifRoom" />
+
 </menu>

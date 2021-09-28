@@ -1,6 +1,8 @@
 package com.tbadhit.submissionbfaa2.view_model
 
+import android.app.Application
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FollowingViewModel : ViewModel() {
+class FollowingViewModel(private val application: Application) : ViewModel() {
     val listFollowing = MutableLiveData<ArrayList<ResponseUser>>()
 
     fun setListFollowing(username: String) {
@@ -21,13 +23,19 @@ class FollowingViewModel : ViewModel() {
                     response: Response<ArrayList<ResponseUser>>
                 ) {
                     if (response.isSuccessful) {
-                        val responseBody = response.body()
-                        listFollowing.postValue(responseBody)
+                        if (response.body() != null) {
+                            listFollowing.postValue(response.body())
+                        }
                     }
                 }
 
                 override fun onFailure(call: Call<ArrayList<ResponseUser>>, t: Throwable) {
                     t.message?.let { Log.d("onFailure", it) }
+                    Toast.makeText(
+                        application.applicationContext,
+                        t.localizedMessage,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             })

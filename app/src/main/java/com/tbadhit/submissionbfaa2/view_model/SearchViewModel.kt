@@ -1,17 +1,25 @@
 package com.tbadhit.submissionbfaa2.view_model
 
+import android.app.Application
+import android.content.Context
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.widget.Toast
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.*
 import com.tbadhit.submissionbfaa2.api.ApiConfig
 import com.tbadhit.submissionbfaa2.model.ResponseSearch
 import com.tbadhit.submissionbfaa2.model.ResponseUser
+import com.tbadhit.submissionbfaa2.pref.SettingPreferences
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SearchViewModel : ViewModel() {
+class SearchViewModel(val application: Application) : ViewModel() {
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+    private val pref: SettingPreferences = SettingPreferences.getInstance(application.dataStore)
     val listUsers = MutableLiveData<ArrayList<ResponseUser>>()
 
     fun setSearchUser(query: String) {
@@ -21,13 +29,19 @@ class SearchViewModel : ViewModel() {
                 response: Response<ResponseSearch>
             ) {
                 if (response.isSuccessful) {
-                    val result = response.body()?.listUsers
-                    listUsers.postValue(result)
+                    if (response.body() != null) {
+                        listUsers.postValue(response.body()?.listUsers)
+                    }
                 }
             }
 
             override fun onFailure(call: Call<ResponseSearch>, t: Throwable) {
                 t.message?.let { Log.d("onFailure", it) }
+                Toast.makeText(
+                    application.applicationContext,
+                    t.localizedMessage,
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })
@@ -35,5 +49,15 @@ class SearchViewModel : ViewModel() {
 
     fun getSearchUser(): LiveData<ArrayList<ResponseUser>> {
         return listUsers
+    }
+
+    fun getThemeSetting(): LiveData<Boolean> {
+        return pref.getThemeSetting().asLiveData()
+    }
+
+    fun saveThemeSetting(isDarkModeActive: Boolean) {
+        viewModelScope.launch {
+            pref.saveThemeSetting(isDarkModeActive)
+        }
     }
 }

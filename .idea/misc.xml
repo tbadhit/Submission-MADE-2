@@ -10,10 +10,33 @@
         <entry key="..\:/ANDROID/Kotlin/Belajar Fundamental Aplikasi Android/SubmissionBFAA2/app/src/main/res/layout/fragment_following.xml" value="0.1" />
         <entry key="..\:/ANDROID/Kotlin/Belajar Fundamental Aplikasi Android/SubmissionBFAA2/app/src/main/res/layout/item_row_user.xml" value="0.25" />
         <entry key="app/src/main/res/drawable-v24/ic_company.xml" value="0.2553846153846154" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/ic_account_circle.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/ic_account_circle_24.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2518518518518518" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.2518518518518518" />
+        <entry key="app/src/main/res/drawable/ic_dark_mode.xml" value="0.2564814814814815" />
+        <entry key="app/src/main/res/drawable/ic_favorite_border.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/ic_favorite_red.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/ic_favorite_white.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/ic_github.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/ic_light_mode.xml" value="0.2564814814814815" />
+        <entry key="app/src/main/res/drawable/ic_location_on.xml" value="0.26974358974358975" />
         <entry key="app/src/main/res/drawable/ic_location_on_24.xml" value="0.2553846153846154" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/ic_search_24.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/drawable/searchview_background.xml" value="0.26974358974358975" />
         <entry key="app/src/main/res/layout-v23/activity_main.xml" value="0.11388888888888889" />
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.3649661483669418" />
+        <entry key="app/src/main/res/layout/activity_favorite.xml" value="0.1517037038249179" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19862845094221135" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.14074074074074075" />
+        <entry key="app/src/main/res/layout/fragment_follower.xml" value="0.11388888888888889" />
+        <entry key="app/src/main/res/layout/fragment_following.xml" value="0.11388888888888889" />
         <entry key="app/src/main/res/layout/item_row_user.xml" value="0.24933141835270242" />
+        <entry key="app/src/main/res/layout/switch_layout.xml" value="0.15092592592592594" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.21361530736329584" />
       </map>
     </option>
   </component>
