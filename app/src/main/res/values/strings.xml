@@ -8,15 +8,8 @@
     <string name="following">Following</string>
     <string name="number">0</string>
     <string name="repositories">Repositories</string>
-    <string name="change_language_settings">Change language settings</string>
     <string name="company">company</string>
     <string name="favorite">Favorite</string>
-    <string name="appbar_favorite">Favorite Github</string>
-    <string name="theme_mode">Theme Mode</string>
-    <string name="alert_title">Theme</string>
-    <string name="alert_message">Light / Dark</string>
-    <string name="alert_positive">Activate</string>
-    <string name="alert_negative">Cancel</string>
     <string name="toast_add_favorite">Added to Favorite</string>
     <string name="toast_remove_favorite">Remove from Favorite</string>
     <string name="title_favorite" translatable="false">Favorite</string>

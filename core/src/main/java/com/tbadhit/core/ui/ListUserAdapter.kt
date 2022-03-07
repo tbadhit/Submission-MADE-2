@@ -1,5 +1,6 @@
 package com.tbadhit.core.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,7 @@ class ListUserAdapter(
 
     override fun getItemCount(): Int = users.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setListUser(items: List<User>?) {
         users.apply {
             clear()

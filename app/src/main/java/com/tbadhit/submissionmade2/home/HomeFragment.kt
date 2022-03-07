@@ -17,7 +17,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
     private lateinit var adapterUser: ListUserAdapter
     private val searchViewModel: SearchViewModel by viewModel()
 
@@ -28,7 +29,7 @@ class HomeFragment : Fragment() {
         val actionBar = (activity as AppCompatActivity).supportActionBar
         actionBar?.title = getString(R.string.appbar)
         setHasOptionsMenu(true)
-        binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -95,6 +96,12 @@ class HomeFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        binding.rvUser.adapter = null
+        _binding = null
+        super.onDestroyView()
+    }
+
     private fun showLoading(state: Boolean) {
         binding.apply {
             if (state) {
@@ -119,5 +126,4 @@ class HomeFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

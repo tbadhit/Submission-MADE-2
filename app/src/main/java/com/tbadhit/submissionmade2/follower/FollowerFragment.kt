@@ -70,9 +70,10 @@ class FollowerFragment : Fragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        binding.rvFollower.adapter = null
         _binding = null
+        super.onDestroyView()
     }
 
     private fun showLoading(state: Boolean) {

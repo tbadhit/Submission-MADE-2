@@ -73,9 +73,10 @@ class FollowingFragment : Fragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        binding.rvFollowing.adapter = null
         _binding = null
+        super.onDestroyView()
     }
 
     private fun showLoading(state: Boolean) {
